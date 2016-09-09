@@ -1,0 +1,5 @@
+{% for item in item.configure %}
+[{% if item.profile != 'default' %}profile {% endif %}{{ item.profile }}]
+output = {{ item.output }}
+region = {{ item.region }}
+{% endfor %}
