@@ -1,6 +1,8 @@
 Ansible Role: AWSCLI
 =========
 
+[![Build Status](https://travis-ci.org/kotarella1110/ansible-role-awscli.svg?branch=master)](https://travis-ci.org/kotarella1110/ansible-role-awscli)
+
 This role to manage awscli users.
 
 Requirements
@@ -25,7 +27,7 @@ awscli_users:
   # Remove the user 'johnd'
   - name: johnd
     state: absent
- ```
+```
 
 Dependencies
 ------------
