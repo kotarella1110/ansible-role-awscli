@@ -1,5 +1,14 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    awscli_users: 
+      - name: "{{ ansible_ssh_user }}"
+        state: present
+        configure:
+          - aws_access_key_id: XXXXXXXXXXXXXXXXXXXX
+            aws_secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      - name: "{{ ansible_ssh_user }}"
+        state: absent
   roles:
     - ../../
