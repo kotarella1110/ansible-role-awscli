@@ -13,6 +13,7 @@
     state: present
 
 - name: Create the aws config directory
+  become: yes
   become_user: "{{ item.name }}"
   file:
     path: ~/.aws
@@ -22,6 +23,7 @@
   when: item.state is not defined or item.state == "present"
 
 - name: Set awscli credentials
+  become: yes
   become_user: "{{ item.name }}"
   template:
     src: config.j2
@@ -31,6 +33,7 @@
   when: item.state is not defined or item.state == "present"
 
 - name: Set awscli credentials
+  become: yes
   become_user: "{{ item.name }}"
   template:
     src: credentials.j2
@@ -40,6 +43,7 @@
   when: item.state is not defined or item.state == "present"
 
 - name: Remove awscli
+  become: yes
   become_user: "{{ item.name }}"
   file:
     path: ~/.aws
